@@ -1,0 +1,21 @@
+//Time Complexity: O(n)
+//Space Complexity: O(n)
+
+class Solution {
+public:
+    int minAddToMakeValid(string p) {
+        stack<int> s;
+        for(char ch:p){
+            if(s.empty()){
+                s.push(ch);
+            }
+            else if(s.top()=='(' && ch==')'){
+                s.pop();
+            }
+            else{
+                s.push(ch);
+            }
+        }
+        return s.size();
+    }
+};
