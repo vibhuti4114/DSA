@@ -1,0 +1,17 @@
+//Time Complexity: O(n)
+//Space Complexity: O(1)
+
+class Solution {
+public:
+    int removeElement(vector<int>& v, int p) {
+        int st=0,end=0,n=v.size();
+        while(end<n){
+            if(v[end]!=p){
+                swap(v[st],v[end]);
+                st++;
+            }
+            end++;
+        }
+        return st;
+    }
+};
